@@ -3,11 +3,11 @@
 namespace App\Policies;
 
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class UserPolicy
 {
-    public function viewAdmin(User $user) : bool{
+    public function viewAdmin(User $user): bool
+    {
         return $user->isAdmin() || $user->isEditor();
     }
 

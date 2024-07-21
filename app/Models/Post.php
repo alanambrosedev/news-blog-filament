@@ -60,7 +60,6 @@ class Post extends Model
         });
     }
 
-
     public function scopeFeatured($query)
     {
         $query->where('featured', true);

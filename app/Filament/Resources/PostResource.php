@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
-use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
 use Filament\Forms;
 use Filament\Forms\Components\Checkbox;
@@ -53,7 +52,7 @@ class PostResource extends Resource
                         TextInput::make('slug')->required()->minLength(1)->unique(ignoreRecord: true)->maxLength(150),
                         RichEditor::make('body')
                             ->required()
-                            ->fileAttachmentsDirectory('posts/images')->columnSpanFull()
+                            ->fileAttachmentsDirectory('posts/images')->columnSpanFull(),
                     ]
                 )->columns(2),
                 Section::make('Meta')->schema(

@@ -21,8 +21,11 @@ class User extends Authenticatable implements FilamentUser
     use TwoFactorAuthenticatable;
 
     const ROLE_ADMIN = 'ADMIN';
+
     const ROLE_EDITOR = 'EDITOR';
+
     const ROLE_USER = 'USER';
+
     const ROLE_DEFAULT = self::ROLE_USER;
 
     const ROLES = [
@@ -36,11 +39,13 @@ class User extends Authenticatable implements FilamentUser
         return $this->can('view-admin', User::class);
     }
 
-    public function isAdmin(){
+    public function isAdmin()
+    {
         return $this->role === self::ROLE_ADMIN;
     }
 
-    public function isEditor(){
+    public function isEditor()
+    {
         return $this->role === self::ROLE_EDITOR;
     }
 
@@ -53,7 +58,7 @@ class User extends Authenticatable implements FilamentUser
         'name',
         'email',
         'password',
-        'role'
+        'role',
     ];
 
     /**

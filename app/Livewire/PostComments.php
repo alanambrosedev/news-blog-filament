@@ -27,7 +27,7 @@ class PostComments extends Component
 
         $this->post->comments()->create([
             'comment' => $this->comment,
-            'user_id' => auth()->id()
+            'user_id' => auth()->id(),
         ]);
 
         $this->reset('comment');

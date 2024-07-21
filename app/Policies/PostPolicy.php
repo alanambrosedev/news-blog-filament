@@ -4,7 +4,6 @@ namespace App\Policies;
 
 use App\Models\Post;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class PostPolicy
 {
@@ -72,7 +71,7 @@ class PostPolicy
         return $user->isAdmin();
     }
 
-     /**
+    /**
      * Determine whether the user can bulk restore models.
      */
     public function restoreAny(User $user): bool

@@ -3,13 +3,11 @@
 namespace App\Livewire;
 
 use App\Models\Post;
-use Livewire\Attributes\Reactive;
 use Livewire\Component;
 
 class LikeButton extends Component
 {
     public Post $post;
-
 
     public function toggleLike()
     {
@@ -21,6 +19,7 @@ class LikeButton extends Component
 
         if ($user->hasLiked($this->post)) {
             $user->likes()->detach($this->post);
+
             return;
         }
 
